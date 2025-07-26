@@ -137,11 +137,15 @@ def main():
                 help="Distance between grid levels"
             )
             
+            # Calculate appropriate max_value based on asset type
+            default_grid_range = float(asset_info.get('grid_range', 50.0))
+            max_grid_range = max(100000.0, default_grid_range * 5)  # At least 5x the default or 100k
+            
             grid_range = st.number_input(
                 "Grid Range:",
-                value=float(asset_info.get('grid_range', 50.0)),
+                value=default_grid_range,
                 min_value=0.001,
-                max_value=10000.0,
+                max_value=max_grid_range,
                 step=0.001,
                 format="%.6f",
                 help="Total range of the grid (up and down from midprice)"
