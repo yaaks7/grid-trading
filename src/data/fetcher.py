@@ -4,6 +4,7 @@ Data fetching and preprocessing module for Grid Trading Strategy
 
 import yfinance as yf
 import pandas as pd
+import numpy as np
 import pandas_ta as ta
 from typing import Optional, Tuple
 from datetime import datetime
@@ -69,15 +70,15 @@ class DataFetcher:
         """
         df = data.copy()
         
-        # Add ATR
-        df['ATR'] = ta.atr(high=df.High, low=df.Low, close=df.Close, length=atr_period)
+        # Add ATR (Average True Range)
+        df['ATR'] = ta.atr(high=df['High'], low=df['Low'], close=df['Close'], length=atr_period)
         
         # Add moving averages for dynamic midprice
-        df['MA_20'] = ta.sma(df.Close, length=20)
-        df['MA_50'] = ta.sma(df.Close, length=50)
+        df['MA_20'] = ta.sma(df['Close'], length=20)
+        df['MA_50'] = ta.sma(df['Close'], length=50)
         
         # Add Bollinger Bands
-        bb = ta.bbands(df.Close, length=20, std=2)
+        bb = ta.bbands(df['Close'], length=20, std=2)
         if bb is not None:
             df['BB_Upper'] = bb['BBU_20_2.0']
             df['BB_Lower'] = bb['BBL_20_2.0']
