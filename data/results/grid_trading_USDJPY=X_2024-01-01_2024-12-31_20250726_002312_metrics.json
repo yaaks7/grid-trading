@@ -1,0 +1,23 @@
+{
+  "total_return": "-12.95%",
+  "total_return_value": -12.947967529297694,
+  "annualized_return": "-15.20%",
+  "volatility": "5.24%",
+  "sharpe_ratio": "-2.90",
+  "calmar_ratio": "-1.06",
+  "max_drawdown": "-14.28%",
+  "max_drawdown_value": -14.27584948025915,
+  "max_drawdown_duration": "265 days 00:00:00",
+  "total_trades": 194,
+  "win_rate": "23.20%",
+  "win_rate_value": 23.195876288659793,
+  "best_trade": "0.79%",
+  "worst_trade": "-1.25%",
+  "avg_trade": "-0.05%",
+  "avg_trade_duration": "1 days 00:00:00",
+  "max_trade_duration": "13 days 00:00:00",
+  "start_equity": "2024-03-08 00:00:00",
+  "end_equity": "2024-12-30 00:00:00",
+  "equity_peak": 10154.901733398416,
+  "buy_hold_return": "6.77%"
+}
